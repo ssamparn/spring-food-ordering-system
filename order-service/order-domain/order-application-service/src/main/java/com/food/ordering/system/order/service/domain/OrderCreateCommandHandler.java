@@ -9,11 +9,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class OrderCreatedCommandHandler {
+public class OrderCreateCommandHandler {
 
     private final OrderDataMapper orderDataMapper;
     private final OrderCreateHelper orderCreateHelper;
@@ -23,6 +22,6 @@ public class OrderCreatedCommandHandler {
         OrderCreatedEvent orderCreatedEvent = orderCreateHelper.persistOrder(createOrderCommand);
         log.info("Order is created with id: {}", orderCreatedEvent.getOrder().getId().getValue());
         orderCreatedPaymentRequestMessagePublisher.publish(orderCreatedEvent);
-        return orderDataMapper.createOrderToCreateOrderResponse(orderCreatedEvent.getOrder());
+        return orderDataMapper.createOrderToCreateOrderResponse(orderCreatedEvent.getOrder(), "Order Created Successfully");
     }
 }
