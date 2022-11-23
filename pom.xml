@@ -90,6 +90,7 @@
     <modules>
         <module>order-service</module>
         <module>common</module>
+        <module>order-service-infrastructure</module>
     </modules>
 
 </project>
