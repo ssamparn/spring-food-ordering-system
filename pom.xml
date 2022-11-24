@@ -91,6 +91,7 @@
         <module>order-service</module>
         <module>common</module>
         <module>order-service-infrastructure</module>
+        <module>order-service-infrastructure/order-service-kafka</module>
     </modules>
 
 </project>
