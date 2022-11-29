@@ -1,5 +1,6 @@
 package com.food.ordering.system.kafka.producer.service.impl;
 
+import com.food.ordering.system.kafka.producer.exception.KafkaProducerException;
 import com.food.ordering.system.kafka.producer.service.KafkaProducer;
 import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
@@ -43,6 +44,7 @@ public class KafkaProducerImpl<K extends Serializable, V extends SpecificRecordB
 
     private void handleFailure(K key, V message, Throwable exception) {
         log.error("Error on kafka producer while sending the message with key: {}, message: {} and exception: {}", key, message, exception.getMessage());
+        throw new KafkaProducerException(exception.getMessage());
     }
 
     @PreDestroy
