@@ -6,5 +6,5 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface CustomerRepository {
-    Optional<Customer> findCustomerByCustomerId(UUID customerId);
+    Optional<Customer> findCustomer(UUID customerId);
 }
