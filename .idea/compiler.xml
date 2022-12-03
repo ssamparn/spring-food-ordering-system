@@ -42,7 +42,7 @@
       <module name="order-service" options="" />
       <module name="order-service-infrastructure" options="-parameters" />
       <module name="order-service-kafka" options="" />
-      <module name="spring-food-ordering-system" options="-parameters" />
+      <module name="spring-food-ordering-system" options="" />
     </option>
   </component>
 </project>
