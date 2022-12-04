@@ -45,6 +45,25 @@ public class Payment extends AggregateRoot<PaymentId> {
         this.paymentStatus = paymentStatus;
     }
 
+    public OrderId getOrderId() {
+        return orderId;
+    }
+
+    public CustomerId getCustomerId() {
+        return customerId;
+    }
+
+    public Money getPrice() {
+        return price;
+    }
+
+    public PaymentStatus getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public ZonedDateTime getCreatedAt() {
+        return createdAt;
+    }
 
     public static final class Builder {
         private PaymentId paymentId;

@@ -18,6 +18,14 @@ public class CreditEntry extends BaseEntity<CreditEntryId> {
         totalCreditAmount = totalCreditAmount.subtract(amount);
     }
 
+    public CustomerId getCustomerId() {
+        return customerId;
+    }
+
+    public Money getTotalCreditAmount() {
+        return totalCreditAmount;
+    }
+
     private CreditEntry(Builder builder) {
         setId(builder.creditEntryId);
         customerId = builder.customerId;
