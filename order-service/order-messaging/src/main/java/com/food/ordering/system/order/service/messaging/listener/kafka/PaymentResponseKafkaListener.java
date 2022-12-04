@@ -30,7 +30,7 @@ public class PaymentResponseKafkaListener implements KafkaConsumer<PaymentRespon
 
     @Override
     @KafkaListener(
-            id = "${kafka-cosumer-config.payment-consumer-group-id}",
+            id = "${kafka-consumer-config.payment-consumer-group-id}",
             topics = "${order-service.payment-response-topic-name}"
     )
     public void receive(@Header(KafkaHeaders.RECEIVED_KEY) List<String> keys,

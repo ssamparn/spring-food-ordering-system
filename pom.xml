@@ -120,6 +120,8 @@
         <module>common</module>
         <module>order-service-infrastructure</module>
         <module>order-service-infrastructure/order-service-kafka</module>
+        <module>customer-service</module>
+        <module>payment-service</module>
     </modules>
 
 </project>
