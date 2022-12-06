@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>order-service-infrastructure</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>order-service-saga</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

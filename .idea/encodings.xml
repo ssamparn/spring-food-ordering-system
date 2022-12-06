@@ -12,6 +12,7 @@
     <file url="file://$PROJECT_DIR$/order-service-infrastructure/order-service-kafka/kafka-producer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-service-infrastructure/order-service-kafka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-service-infrastructure/order-service-kafka/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-service-infrastructure/order-service-saga/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-service-infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-service-infrastructure/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-service/order-application/src/main/java" charset="UTF-8" />
