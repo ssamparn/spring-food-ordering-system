@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static com.food.ordering.system.order.service.domain.entity.Order.FAILURE_MESSAGE_DELIMITER;
+import static com.food.ordering.system.order.service.domain.entities.Order.FAILURE_MESSAGE_DELIMITER;
 
 @Slf4j
 @Component

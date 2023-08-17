@@ -1,4 +1,4 @@
-package com.food.ordering.system.order.service.domain.entity;
+package com.food.ordering.system.order.service.domain.entities;
 
 import com.food.ordering.system.domain.entity.AggregateRoot;
 import com.food.ordering.system.domain.valueobjects.CustomerId;
@@ -6,7 +6,7 @@ import com.food.ordering.system.domain.valueobjects.Money;
 import com.food.ordering.system.domain.valueobjects.OrderId;
 import com.food.ordering.system.domain.valueobjects.OrderStatus;
 import com.food.ordering.system.domain.valueobjects.RestaurantId;
-import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
+import com.food.ordering.system.order.service.domain.exceptions.OrderDomainException;
 import com.food.ordering.system.order.service.domain.valueobjects.OrderItemId;
 import com.food.ordering.system.order.service.domain.valueobjects.StreetAddress;
 import com.food.ordering.system.order.service.domain.valueobjects.TrackingId;
@@ -88,15 +88,15 @@ public class Order extends AggregateRoot<OrderId> {
         }
     }
 
-    private void validateTotalPrice() {
-        if (price == null || !price.isGreaterThanZero()) {
-            throw new OrderDomainException("Total price must be greater than zero!");
-        }
-    }
-
     private void validateInitialOrder() {
         if (orderStatus != null || getId() != null) {
             throw new OrderDomainException("Order is not in correct state for initialization");
+        }
+    }
+
+    private void validateTotalPrice() {
+        if (price == null || !price.isGreaterThanZero()) {
+            throw new OrderDomainException("Total price must be greater than zero!");
         }
     }
 

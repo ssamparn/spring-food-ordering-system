@@ -9,9 +9,9 @@ import com.food.ordering.system.order.service.domain.dto.create.CreateOrderRespo
 import com.food.ordering.system.order.service.domain.dto.create.OrderAddress;
 import com.food.ordering.system.order.service.domain.dto.create.OrderItem;
 import com.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
-import com.food.ordering.system.order.service.domain.entity.Order;
-import com.food.ordering.system.order.service.domain.entity.Product;
-import com.food.ordering.system.order.service.domain.entity.Restaurant;
+import com.food.ordering.system.order.service.domain.entities.Order;
+import com.food.ordering.system.order.service.domain.entities.Product;
+import com.food.ordering.system.order.service.domain.entities.Restaurant;
 import com.food.ordering.system.order.service.domain.valueobjects.StreetAddress;
 import org.springframework.stereotype.Component;
 
@@ -43,9 +43,9 @@ public class OrderDataMapper {
                 .build();
     }
 
-    private List<com.food.ordering.system.order.service.domain.entity.OrderItem> mapOrderItemsDtoToEntities(List<OrderItem> orderItemsDto) {
+    private List<com.food.ordering.system.order.service.domain.entities.OrderItem> mapOrderItemsDtoToEntities(List<OrderItem> orderItemsDto) {
         return orderItemsDto.stream()
-                .map(orderItemDto -> com.food.ordering.system.order.service.domain.entity.OrderItem.Builder.builder()
+                .map(orderItemDto -> com.food.ordering.system.order.service.domain.entities.OrderItem.Builder.builder()
                         .product(new Product(new ProductId(orderItemDto.getProductId())))
                         .price(new Money(orderItemDto.getPrice()))
                         .quantity(orderItemDto.getQuantity())

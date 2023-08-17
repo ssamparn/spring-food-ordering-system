@@ -1,4 +1,4 @@
-package com.food.ordering.system.order.service.domain.entity;
+package com.food.ordering.system.order.service.domain.entities;
 
 import com.food.ordering.system.domain.entity.AggregateRoot;
 import com.food.ordering.system.domain.valueobjects.RestaurantId;
@@ -12,8 +12,8 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
 
     private Restaurant(Builder builder) {
         super.setId(builder.restaurantId);
-        products = builder.products;
-        active = builder.active;
+        this.products = builder.products;
+        this.active = builder.active;
     }
 
     public List<Product> getProducts() {
@@ -21,9 +21,8 @@ public class Restaurant extends AggregateRoot<RestaurantId> {
     }
 
     public boolean isActive() {
-        return active;
+        return this.active;
     }
-
 
     public static final class Builder {
         private RestaurantId restaurantId;

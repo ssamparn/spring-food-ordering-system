@@ -1,13 +1,13 @@
 package com.food.ordering.system.order.service.domain;
 
 import com.food.ordering.system.domain.events.publisher.DomainEventPublisher;
-import com.food.ordering.system.order.service.domain.entity.Order;
-import com.food.ordering.system.order.service.domain.entity.Product;
-import com.food.ordering.system.order.service.domain.entity.Restaurant;
+import com.food.ordering.system.order.service.domain.entities.Order;
+import com.food.ordering.system.order.service.domain.entities.Product;
+import com.food.ordering.system.order.service.domain.entities.Restaurant;
 import com.food.ordering.system.order.service.domain.events.OrderCancelledEvent;
 import com.food.ordering.system.order.service.domain.events.OrderCreatedEvent;
 import com.food.ordering.system.order.service.domain.events.OrderPaidEvent;
-import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
+import com.food.ordering.system.order.service.domain.exceptions.OrderDomainException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.ZoneId;

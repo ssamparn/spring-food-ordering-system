@@ -14,6 +14,10 @@ public class Money {
         this.amount = amount;
     }
 
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
     public boolean isGreaterThanZero() {
         return this.amount != null && this.amount.compareTo(BigDecimal.ZERO) > 0;
     }
@@ -35,11 +39,8 @@ public class Money {
     }
 
     private BigDecimal setScale(BigDecimal input) {
-        return input.setScale(2, RoundingMode.HALF_EVEN);
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
+        return input.setScale(2, RoundingMode.HALF_EVEN); // With scale 2, the number of digits after decimal point is 2, e.g. 10.75 or 500.80.
+        // Round towards the nearest neighbor. If both neighbors are equidistant, round towards the even neighbor.
     }
 
     @Override

@@ -10,11 +10,11 @@ import com.food.ordering.system.order.service.domain.dto.create.CreateOrderComma
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.service.domain.dto.create.OrderAddress;
 import com.food.ordering.system.order.service.domain.dto.create.OrderItem;
-import com.food.ordering.system.order.service.domain.entity.Customer;
-import com.food.ordering.system.order.service.domain.entity.Order;
-import com.food.ordering.system.order.service.domain.entity.Product;
-import com.food.ordering.system.order.service.domain.entity.Restaurant;
-import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
+import com.food.ordering.system.order.service.domain.entities.Customer;
+import com.food.ordering.system.order.service.domain.entities.Order;
+import com.food.ordering.system.order.service.domain.entities.Product;
+import com.food.ordering.system.order.service.domain.entities.Restaurant;
+import com.food.ordering.system.order.service.domain.exceptions.OrderDomainException;
 import com.food.ordering.system.order.service.domain.mapper.OrderDataMapper;
 import com.food.ordering.system.order.service.domain.ports.input.service.OrderApplicationService;
 import com.food.ordering.system.order.service.domain.ports.output.repository.CustomerRepository;
@@ -47,6 +47,7 @@ public class OrderApplicationServiceTest {
     private final UUID ORDER_ID = UUID.fromString("98290fb6-d91b-4d39-9f16-4f088c6f57f5");
 
     private final BigDecimal PRICE = new BigDecimal("200.00");
+    private final BigDecimal WRONG_PRICE = new BigDecimal("250.00");
 
     @Autowired
     private OrderApplicationService orderApplicationService;
@@ -100,7 +101,7 @@ public class OrderApplicationServiceTest {
                         .postalCode("1000AB")
                         .city("Paris")
                         .build())
-                .price(new BigDecimal("250.00"))
+                .price(WRONG_PRICE)
                 .items(List.of(OrderItem.builder()
                                 .productId(PRODUCT_ID)
                                 .quantity(1)

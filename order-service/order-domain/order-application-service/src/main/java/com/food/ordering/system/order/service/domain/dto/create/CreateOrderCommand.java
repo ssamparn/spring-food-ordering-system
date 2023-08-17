@@ -28,6 +28,4 @@ public class CreateOrderCommand {
 
     @NotNull
     private final OrderAddress orderAddress;
-
-
 }

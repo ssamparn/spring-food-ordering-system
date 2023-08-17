@@ -1,7 +1,7 @@
 package com.food.ordering.system.order.service.domain.events;
 
 import com.food.ordering.system.domain.events.DomainEvent;
-import com.food.ordering.system.order.service.domain.entity.Order;
+import com.food.ordering.system.order.service.domain.entities.Order;
 
 import java.time.ZonedDateTime;
 

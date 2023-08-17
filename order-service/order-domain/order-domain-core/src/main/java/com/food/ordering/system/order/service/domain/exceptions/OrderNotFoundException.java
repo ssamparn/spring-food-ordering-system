@@ -1,4 +1,4 @@
-package com.food.ordering.system.order.service.domain.exception;
+package com.food.ordering.system.order.service.domain.exceptions;
 
 public class OrderNotFoundException extends OrderDomainException {
     public OrderNotFoundException(String message) {

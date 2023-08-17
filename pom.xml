@@ -18,7 +18,7 @@
 
     <properties>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <mockito-core.version>4.9.0</mockito-core.version>
+        <mockito-core.version>5.4.0</mockito-core.version>
         <spring-kafka.version>3.0.0</spring-kafka.version>
         <kafka-avro-serializer.version>7.3.0</kafka-avro-serializer.version>
         <avro.version>1.11.1</avro.version>
@@ -26,6 +26,21 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.food.ordering.system</groupId>
+                <artifactId>common-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.food.ordering.system</groupId>
+                <artifactId>common-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.food.ordering.system</groupId>
+                <artifactId>common-data-access</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.food.ordering.system</groupId>
                 <artifactId>order-domain-core</artifactId>
@@ -76,21 +91,7 @@
                 <artifactId>kafka-config-data</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.food.ordering.system</groupId>
-                <artifactId>common-domain</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.food.ordering.system</groupId>
-                <artifactId>common-application</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.food.ordering.system</groupId>
-                <artifactId>common-data-access</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+
             <dependency>
                 <groupId>com.food.ordering.system</groupId>
                 <artifactId>payment-domain-core</artifactId>
@@ -150,7 +151,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -170,7 +170,6 @@
         <module>order-service</module>
         <module>common</module>
         <module>order-service-infrastructure</module>
-        <module>order-service-infrastructure/order-service-kafka</module>
         <module>customer-service</module>
         <module>payment-service</module>
         <module>restaurant-service</module>
