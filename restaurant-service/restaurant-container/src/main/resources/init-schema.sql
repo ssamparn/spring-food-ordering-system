@@ -96,6 +96,6 @@ END;
 DROP trigger IF EXISTS refresh_order_restaurant_m_view ON restaurant.restaurant_products;
 
 CREATE trigger refresh_order_restaurant_m_view
-    after INSERT OR UPDATE OR DELETE OR truncate
-    ON restaurant.restaurant_products FOR each statement
-    EXECUTE PROCEDURE restaurant.refresh_order_restaurant_m_view();
+after INSERT OR UPDATE OR DELETE OR truncate
+ON restaurant.restaurant_products FOR each statement
+EXECUTE PROCEDURE restaurant.refresh_order_restaurant_m_view();

@@ -58,8 +58,8 @@ public class PaymentRequestHelper {
     public PaymentEvent persistPayment(PaymentRequest paymentRequest) {
         log.info("Received payment complete event for order id: {}", paymentRequest.getOrderId());
         Payment payment = paymentDataMapper.paymentRequestModelToPayment(paymentRequest);
-        CreditEntry creditEntry = getCreditEntry(payment.getCustomerId());
-        List<CreditHistory> creditHistories = getCreditHistory(payment.getCustomerId());
+        CreditEntry creditEntry = this.getCreditEntry(payment.getCustomerId());
+        List<CreditHistory> creditHistories = this.getCreditHistory(payment.getCustomerId());
         List<String> failureMessages = new ArrayList<>();
         PaymentEvent paymentEvent = paymentDomainService.validateAndInitiatePayment(payment, creditEntry,
                 creditHistories, failureMessages, paymentCompletedEventDomainEventPublisher,
@@ -86,8 +86,8 @@ public class PaymentRequestHelper {
         }
 
         Payment payment = paymentResponse.get();
-        CreditEntry creditEntry = getCreditEntry(payment.getCustomerId());
-        List<CreditHistory> creditHistories = getCreditHistory(payment.getCustomerId());
+        CreditEntry creditEntry = this.getCreditEntry(payment.getCustomerId());
+        List<CreditHistory> creditHistories = this.getCreditHistory(payment.getCustomerId());
         List<String> failureMessages = new ArrayList<>();
         PaymentEvent paymentEvent = paymentDomainService.validateAndCancelPayment(payment, creditEntry, creditHistories,
                 failureMessages, paymentCancelledEventDomainEventPublisher, paymentFailedEventDomainEventPublisher);

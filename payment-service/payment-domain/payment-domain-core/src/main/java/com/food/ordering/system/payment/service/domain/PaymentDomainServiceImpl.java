@@ -33,10 +33,10 @@ public class PaymentDomainServiceImpl implements PaymentDomainService {
                                                    DomainEventPublisher<PaymentFailedEvent> paymentFailedEventDomainEventPublisher) {
         payment.validatePayment(failureMessages);
         payment.initializePayment();
-        validateCreditEntry(payment, creditEntry, failureMessages);
-        subtractCreditEntry(payment, creditEntry);
-        updateCreditHistory(payment, creditHistories, TransactionType.DEBIT);
-        validateCreditHistory(creditEntry, creditHistories, failureMessages);
+        this.validateCreditEntry(payment, creditEntry, failureMessages);
+        this.subtractCreditEntry(payment, creditEntry);
+        this.updateCreditHistory(payment, creditHistories, TransactionType.DEBIT);
+        this.validateCreditHistory(creditEntry, creditHistories, failureMessages);
 
         if (failureMessages.isEmpty()) {
             log.info("Payment is initiated for order id: {}", payment.getOrderId().getValue());
@@ -105,7 +105,7 @@ public class PaymentDomainServiceImpl implements PaymentDomainService {
                                                  DomainEventPublisher<PaymentFailedEvent> paymentFailedEventDomainEventPublisher) {
 
         payment.validatePayment(failureMessages);
-        addCreditEntry(payment, creditEntry);
+        this.addCreditEntry(payment, creditEntry);
         updateCreditHistory(payment, creditHistories, TransactionType.CREDIT);
 
         if (failureMessages.isEmpty()) {
