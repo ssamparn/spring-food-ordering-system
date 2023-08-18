@@ -35,6 +35,7 @@ public class GlobalExceptionHandler {
     })
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorDto handleException(ValidationException validationException) {
+
         ErrorDto errorDto;
 
         if (validationException instanceof ConstraintViolationException) {
