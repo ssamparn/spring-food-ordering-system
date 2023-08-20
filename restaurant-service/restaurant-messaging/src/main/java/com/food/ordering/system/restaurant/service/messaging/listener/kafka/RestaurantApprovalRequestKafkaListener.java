@@ -1,6 +1,6 @@
 package com.food.ordering.system.restaurant.service.messaging.listener.kafka;
 
-import com.food.ordering.system.kafka.consumer.KafkaConsumer;
+import com.food.ordering.system.kafka.consumer.service.KafkaConsumer;
 import com.food.ordering.system.kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
 import com.food.ordering.system.restaurant.service.domain.dto.RestaurantApprovalRequest;
 import com.food.ordering.system.restaurant.service.domain.ports.input.message.listener.RestaurantApprovalRequestMessageListener;
