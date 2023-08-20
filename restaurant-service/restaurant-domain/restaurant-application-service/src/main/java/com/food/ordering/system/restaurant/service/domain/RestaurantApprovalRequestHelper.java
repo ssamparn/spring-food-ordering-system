@@ -48,7 +48,7 @@ public class RestaurantApprovalRequestHelper {
     public OrderApprovalEvent persistOrderApproval(RestaurantApprovalRequest restaurantApprovalRequest) {
         log.info("Processing restaurant approval for order id: {}", restaurantApprovalRequest.getOrderId());
         List<String> failureMessages = new ArrayList<>();
-        Restaurant restaurant = findRestaurant(restaurantApprovalRequest);
+        Restaurant restaurant = this.findRestaurant(restaurantApprovalRequest);
         OrderApprovalEvent orderApprovalEvent = restaurantDomainService.validateOrder(
                 restaurant,
                 failureMessages,
