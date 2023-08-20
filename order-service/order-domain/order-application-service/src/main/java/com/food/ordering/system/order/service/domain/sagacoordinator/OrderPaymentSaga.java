@@ -1,6 +1,7 @@
-package com.food.ordering.system.order.service.domain;
+package com.food.ordering.system.order.service.domain.sagacoordinator;
 
 import com.food.ordering.system.domain.events.EmptyEvent;
+import com.food.ordering.system.order.service.domain.OrderDomainService;
 import com.food.ordering.system.order.service.domain.dto.message.PaymentResponse;
 import com.food.ordering.system.order.service.domain.entities.Order;
 import com.food.ordering.system.order.service.domain.events.OrderPaidEvent;
