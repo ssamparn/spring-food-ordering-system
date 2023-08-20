@@ -1,4 +1,4 @@
-package com.food.ordering.system.order.service.domain;
+package com.food.ordering.system.order.service.domain.sagacoordinator;
 
 import com.food.ordering.system.domain.valueobjects.OrderId;
 import com.food.ordering.system.order.service.domain.entities.Order;
