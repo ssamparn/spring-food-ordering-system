@@ -40,7 +40,7 @@ public class PaymentCompletedKafkaMessagePublisher implements PaymentCompletedMe
             );
 
             log.info("PaymentResponseAvroModel sent to Kafka for order id: {}",
-                    paymentResponseAvroModel.getOrderId().toString());
+                    paymentResponseAvroModel.getOrderId());
         } catch (Exception e) {
             log.error("Error while sending PaymentResponseAvroModel message to kafka with order id: {}. error: {}",
                     orderId, e.getMessage());
