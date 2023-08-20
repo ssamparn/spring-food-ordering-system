@@ -1,6 +1,6 @@
 package com.food.ordering.system.order.service.domain.ports.input.message.listener.payment.impl;
 
-import com.food.ordering.system.order.service.domain.OrderPaymentSaga;
+import com.food.ordering.system.order.service.domain.sagacoordinator.OrderPaymentSaga;
 import com.food.ordering.system.order.service.domain.dto.message.PaymentResponse;
 import com.food.ordering.system.order.service.domain.events.OrderPaidEvent;
 import com.food.ordering.system.order.service.domain.ports.input.message.listener.payment.PaymentResponseMessageListener;
