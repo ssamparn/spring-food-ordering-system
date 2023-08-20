@@ -46,7 +46,7 @@ public class OrderApproval extends BaseEntity<OrderApprovalId> {
         }
 
         public Builder orderApprovalId(OrderApprovalId orderApprovalId) {
-            orderApprovalId = orderApprovalId;
+            this.orderApprovalId = orderApprovalId;
             return this;
         }
 
