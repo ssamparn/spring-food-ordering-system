@@ -15,6 +15,7 @@
         <module name="restaurant-container" />
         <module name="order-messaging" />
         <module name="payment-application-service" />
+        <module name="order-service-outbox" />
         <module name="common-domain" />
         <module name="order-application" />
         <module name="restaurant-domain-core" />
@@ -56,6 +57,7 @@
       <module name="order-service" options="-parameters" />
       <module name="order-service-infrastructure" options="-parameters" />
       <module name="order-service-kafka" options="-parameters" />
+      <module name="order-service-outbox" options="-parameters" />
       <module name="order-service-saga" options="-parameters" />
       <module name="payment-application-service" options="-parameters" />
       <module name="payment-container" options="-parameters" />

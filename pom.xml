@@ -73,6 +73,11 @@
             </dependency>
             <dependency>
                 <groupId>com.food.ordering.system</groupId>
+                <artifactId>order-service-outbox</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.food.ordering.system</groupId>
                 <artifactId>kafka-consumer</artifactId>
                 <version>${project.version}</version>
             </dependency>

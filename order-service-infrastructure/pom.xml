@@ -20,6 +20,7 @@
     <modules>
         <module>order-service-kafka</module>
         <module>order-service-saga</module>
+        <module>order-service-outbox</module>
     </modules>
 
 </project>
