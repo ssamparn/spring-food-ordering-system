@@ -10,7 +10,9 @@ import com.food.ordering.system.order.service.domain.dto.create.CreateOrderComma
 import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.service.domain.dto.create.OrderAddress;
 import com.food.ordering.system.order.service.domain.dto.create.OrderItem;
+import com.food.ordering.system.order.service.domain.dto.message.CustomerModel;
 import com.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
+import com.food.ordering.system.order.service.domain.entities.Customer;
 import com.food.ordering.system.order.service.domain.entities.Order;
 import com.food.ordering.system.order.service.domain.entities.Product;
 import com.food.ordering.system.order.service.domain.entities.Restaurant;
@@ -29,6 +31,16 @@ import java.util.stream.Collectors;
 
 @Component
 public class OrderDataMapper {
+
+
+    public Customer customerModelToCustomer(CustomerModel customerModel) {
+        return new Customer(
+                new CustomerId(UUID.fromString(customerModel.getId())),
+                customerModel.getUsername(),
+                customerModel.getFirstName(),
+                customerModel.getLastName()
+        );
+    }
 
     public Restaurant createOrderCommandToRestaurant(CreateOrderCommand createOrderCommand) {
         return Restaurant.Builder.builder()
