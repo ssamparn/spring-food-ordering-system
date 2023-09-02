@@ -45,8 +45,15 @@ public class PaymentEventKafkaPublisher implements PaymentResponseMessagePublish
         try {
             PaymentResponseAvroModel paymentResponseAvroModel = paymentMessagingDataMapper.orderEventPayloadToPaymentResponseAvroModel(sagaId, orderEventPayload);
 
-            kafkaProducer.send(paymentServiceConfigData.getPaymentResponseTopicName(), sagaId, paymentResponseAvroModel);
-
+            kafkaProducer.send(paymentServiceConfigData.getPaymentResponseTopicName(),
+                    sagaId,
+                    paymentResponseAvroModel,
+                    kafkaMessageHelper.getKafkaCallback(paymentServiceConfigData.getPaymentResponseTopicName(),
+                            paymentResponseAvroModel,
+                            orderOutboxMessage,
+                            outboxCallback,
+                            orderEventPayload.getOrderId(),
+                            "PaymentResponseAvroModel"));
             log.info("PaymentResponseAvroModel sent to kafka for order id: {} and saga id: {}", paymentResponseAvroModel.getOrderId(), sagaId);
         } catch (Exception e) {
             log.error("Error while sending PaymentRequestAvroModel message to kafka with order id: {} and saga id: {}, error: {}", orderEventPayload.getOrderId(), sagaId, e.getMessage());
